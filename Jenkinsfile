@@ -11,7 +11,7 @@ node {
         '''
     }
     stage('post build'){
-        echo "email to the user about the build status"
+        sh "echo sakkigo ni"
     }
     
 }
