@@ -2,7 +2,7 @@ node('maven') {
     stage('Git upload'){
       def mvnTool = tool 'Apache Maven 3.6.2'
         
-      sh "${mvnTool}/bin/mvn/ clean install"
+      sh "${mvnTool}/bin/mvn clean install"
         
     }
     stage('shell'){
