@@ -1,4 +1,4 @@
-node {
+node('maven') {
     stage('Git upload'){
       // def mvnTool = tool 'Apache Maven 3.6.2'
         
