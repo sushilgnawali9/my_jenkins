@@ -6,8 +6,8 @@ node('maven') {
         junit allowEmptyResults: true, testResults: 'target/surefire-reports.*.xml'
         
     }
-    stage('shell'){
-        sh "echo chal na yar"
+    stage('Artifacts'){
+        archiveArtifacts '**/target/*.war'
     }
     stage('post build'){
         sh "echo sakkigo ni"
