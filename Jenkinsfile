@@ -13,7 +13,7 @@ node('maven') {
     {
         sshagent(['ec2-user'])
         {
-            sh "ssh -o StrictHostKeychecking=no ec2-user@34.205.159.165 /home/ec2-user/tomcat9/bin/startup.sh"
+            sh "ssh -o StrictHostKeyChecking=no ec2-user@34.205.159.165 /home/ec2-user/tomcat9/bin/startup.sh"
         }
     }
     stage('post build'){
