@@ -3,6 +3,7 @@ node('maven') {
       def mvnTool = tool 'Apache Maven 3.6.2'
         
       sh "${mvnTool}/bin/mvn clean install"
+        junit allowEmptyResults: true, testResults: 'target/surefire-reports.*.xml'
         
     }
     stage('shell'){
