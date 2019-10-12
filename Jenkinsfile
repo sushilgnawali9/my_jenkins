@@ -7,9 +7,7 @@ node('maven') {
         
     }
     stage('shell'){
-        sh "
-        echo chal na yar
-        "
+        sh "echo chal na yar"
     }
     stage('post build'){
         sh "echo sakkigo ni"
