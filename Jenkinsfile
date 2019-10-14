@@ -9,6 +9,13 @@ node('maven') {
     stage('Artifacts'){
         archiveArtifacts '**/target/*.war'
     }
+    stage ('docker build')
+    {
+       sh  "docker version"
+       sh " docker build -t arjun321/archiveartifacts ."
+       sh "docker run -d arjun321/archiveartifacts"
+       sh "docker push arjun321/archiveartifacts"
+    }
     stage('deployment')
     {
         sshagent(['ec2-user'])
