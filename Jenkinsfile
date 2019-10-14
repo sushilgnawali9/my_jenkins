@@ -24,6 +24,9 @@ node('maven') {
             //sh "scp -o StrictHostKeyChecking=no /home/ec2-user/workspace/pipe-line-project/target/addressbook.war ec2-user@3.88.86.159:/home/ec2-user/tomcat9/webapps"
         }
     }
+    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-key-shared', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+                sh "aws s3 cp target/addressbook.war s3://sushildarling/"
+}
     stage('post build'){
         sh "echo sakkigo ni"
     }
