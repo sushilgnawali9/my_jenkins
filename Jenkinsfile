@@ -12,9 +12,9 @@ node('maven') {
     stage ('docker build')
     {
        sh  "docker version"
-       sh " docker build -t arjun321/archiveartifacts ."
-       sh "docker run -d arjun321/archiveartifacts"
-       sh "docker push arjun321/archiveartifacts"
+       sh " docker build -t sushil321/archiveartifacts ."
+       sh "docker run -d sushil321/archiveartifacts"
+       sh "docker push sushil321/archiveartifacts"
     }
     stage('deployment')
     {
